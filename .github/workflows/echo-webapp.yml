@@ -33,7 +33,7 @@ jobs:
     
     - name: Publish
       run: |
-        dotnet publish --no-build echo-webapp/echo-webapp.csproj -o echo-webapp/publish
+        dotnet publish --no-build echo-webapp/echo-webapp.csproj -c Release -o echo-webapp/publish
 
     - uses: actions/upload-artifact@v3
       with:
