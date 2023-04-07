@@ -25,6 +25,7 @@ jobs:
     - uses: ./.github/workflows/composite/build-dotnet #tasb/my-public-actions/build-dotnet@main
       with:
         dotnetProject: 'echo-api/echo-webapp.csproj'
+        buildConfiguration: Release
     
     - name: Publish
       if: github.event_name != 'pull_request'
