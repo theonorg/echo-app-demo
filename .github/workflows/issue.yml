@@ -6,7 +6,7 @@ on:
       - opened
 
 jobs:
-  build:
+  update-issue:
 
     runs-on: ubuntu-latest
 

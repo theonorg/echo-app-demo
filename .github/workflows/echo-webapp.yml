@@ -1,4 +1,4 @@
-name: echo-webapp
+name: EchoWebapp
 
 on:
   push:
@@ -23,19 +23,18 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: |
-        dotnet restore echo-webapp/echo-webapp.csproj
     
-    - name: Build
-      run: |
-        dotnet build --no-restore echo-webapp/echo-webapp.csproj -c Release
+    - uses: ./.github/workflows/composite/build-test-publish #tasb/my-public-actions/build-dotnet@main
+      with:
+        dotnetProject: 'echo-api/echo-webapp.csproj'
     
     - name: Publish
+      if: github.event_name != 'pull_request'
       run: |
         dotnet publish --no-build echo-webapp/echo-webapp.csproj -c Release -o echo-webapp/publish
 
     - uses: actions/upload-artifact@v3
+      if: github.event_name != 'pull_request'
       with:
         name: echo-webapp
         path: echo-webapp/publish

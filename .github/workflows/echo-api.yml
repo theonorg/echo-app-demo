@@ -23,19 +23,18 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: |
-        dotnet restore echo-api/echo-api.csproj
-    
-    - name: Build
-      run: |
-        dotnet build --no-restore echo-api/echo-api.csproj -c Release
-    
+
+    - uses: ./.github/workflows/composite/build-test-publish #tasb/my-public-actions/build-dotnet@main
+      with:
+        dotnetProject: 'echo-api/echo-api.csproj'
+
     - name: Publish
+      if: github.event_name != 'pull_request'
       run: |
         dotnet publish --no-build echo-api/echo-api.csproj -c Release -o echo-api/publish
 
     - uses: actions/upload-artifact@v3
+      if: github.event_name != 'pull_request'
       with:
         name: echo-api
         path: echo-api/publish
