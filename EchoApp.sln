@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "echo-webapp", "echo-webapp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "echo-api", "echo-api\echo-api.csproj", "{B0675EF8-CB4B-4450-8708-53164231FC26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "echo-api.tests", "echo-api.tests\echo-api.tests.csproj", "{43BF527B-94FE-4D78-94B5-410BDBA9D420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B0675EF8-CB4B-4450-8708-53164231FC26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0675EF8-CB4B-4450-8708-53164231FC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0675EF8-CB4B-4450-8708-53164231FC26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43BF527B-94FE-4D78-94B5-410BDBA9D420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43BF527B-94FE-4D78-94B5-410BDBA9D420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43BF527B-94FE-4D78-94B5-410BDBA9D420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43BF527B-94FE-4D78-94B5-410BDBA9D420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
