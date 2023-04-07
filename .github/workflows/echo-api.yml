@@ -24,7 +24,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    - uses: ./.github/workflows/composite/build-test-publish #tasb/my-public-actions/build-dotnet@main
+    - uses: ./.github/workflows/composite/build-dotnet #tasb/my-public-actions/build-dotnet@main
       with:
         dotnetProject: 'echo-api/echo-api.csproj'
 
